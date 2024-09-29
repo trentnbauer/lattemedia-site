@@ -578,8 +578,10 @@
           },
           "_name": "content6",
           "_sourceTheme": "mobirise5",
-          "_customHTML": "\n\n\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Embed Website</title>\n\n\n    <iframe src=\"https://stats-small.lattemedia.tv/\" width=\"100%\" height=\"500\" style=\"border:none;\" allowtransparency=\"true\"\n></iframe>\n\n\n",
-          "_JSplaceholders": [],
+          "_customHTML": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Embed Website</title>\n</head>\n<body>\n    <iframe id=\"embeddedFrame\" src=\"https://stats-small.lattemedia.tv/\" width=\"100%\" style=\"border:none;\" allowtransparency=\"true\"></iframe>\n\n    [JS_CODE_0]\n</body>\n</html>\n",
+          "_JSplaceholders": [
+            "<script>\n        window.addEventListener(\"message\", function(event) {\n            // Ensure the message is coming from the correct domain\n            if (event.origin === \"https://stats-small.lattemedia.tv\") {\n                var iframe = document.getElementById('embeddedFrame');\n                iframe.style.height = event.data.height + 'px'; // Resize iframe based on the height sent\n            }\n        }, false);\n    </script>"
+          ],
           "_PHPplaceholders": [],
           "_anchor": "content6-r",
           "_isUserblock": true,
