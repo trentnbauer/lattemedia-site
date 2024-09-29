@@ -1,0 +1,26 @@
+name: Auto Merge Main to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Merge main into gh-pages
+        run: |
+          git checkout gh-pages
+          git merge main --no-ff --commit -m "Automated merge from main to gh-pages"
+          git push origin gh-pages
