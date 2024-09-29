@@ -64,11 +64,12 @@
     "index.html": {
       "settings": {
         "main": true,
-        "title": "Home",
-        "meta_descr": "",
+        "title": "LatteMedia",
+        "meta_descr": "Landing page for LatteMedia and related services",
         "header_custom": "",
         "footer_custom": "",
-        "html_before": ""
+        "html_before": "",
+        "meta_image": "@PROJECT_PATH@/assets/images/untitled-1-128x129.png"
       },
       "components": [
         {
