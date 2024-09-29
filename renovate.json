@@ -1,6 +1,15 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:base"],
+  "automerge": true,
+  "baseBranches": ["gh-pages"],
+  "schedule": ["at any time"],
+  "packageRules": [
+    {
+      "matchBaseBranches": ["main"],
+      "matchManagers": ["git-branch"],
+      "branchNameTemplate": "renovate/merge-main-into-gh-pages",
+      "automerge": true,
+      "prPriority": 1
+    }
   ]
 }
